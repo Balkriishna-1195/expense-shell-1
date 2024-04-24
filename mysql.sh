@@ -8,7 +8,7 @@ echo "Please enter DB password"
 read -s mysql_root_password
 
 
-dnf install mysql-server -y &>> $LOGFILE
+dnf install mysql-sertyghver -y &>> $LOGFILE
 #VALIDATE $? "Installing mysql server"
 
 systemctl enable mysqld &>> $LOGFILE
@@ -25,7 +25,7 @@ mysql -h db.balkriishna.online -uroot -p${mysql_root_password} -e 'show database
 if [ $? -ne 0 ]
 then 
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>> $LOGFILE
-    VALIDATE &? "MySQL root password setup"
+    #VALIDATE &? "MySQL root password setup"
 else 
     echo -e "mysql toot password is already setup.. $Y Skipping $N"
 fi
